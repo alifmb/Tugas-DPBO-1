@@ -1,0 +1,31 @@
+<?php
+include_once("config.php");
+ 
+$result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id DESC");
+?>
+ 
+<html>
+<head>    
+    <title>Homepage</title>
+</head>
+ 
+<body>
+<a href="add.php">Add New User</a><br/><br/>
+ 
+    <table width='80%' border=1>
+ 
+    <tr>
+        <th>NIM</th> <th>Nama_Tim</th> <th>Negara_Asal</th> <th>Tahun_Berdiri</th> <th>Nama_Pemain</th> <th>Update</th>
+    </tr>
+    <?php  
+    while($user_data = mysqli_fetch_array($result)) {         
+        echo "<tr>";
+        echo "<td>".$user_data['Nama_Tim']."</td>";
+        echo "<td>".$user_data['Negara_Asal']."</td>";
+        echo "<td>".$user_data['Tahun_Berdiri']."</td>"; 
+        echo "<td>".$user_data['Nama_Pemain']."</td>";          
+    }
+    ?>
+    </table>
+</body>
+</html>

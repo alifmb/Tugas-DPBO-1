@@ -1,0 +1,11 @@
+create database crud_db;
+ use crud_db;
+ 
+CREATE TABLE `users` (
+  `NIM` int(10) NOT NULL auto_increment,
+  `Nama` varchar(100),
+  `Jenis_Kelamin` varchar(10),
+  `Program_Studi` varchar(100),
+  `Semester` INT(2)
+  PRIMARY KEY  (`id`)
+);

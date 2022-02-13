@@ -1,0 +1,10 @@
+create database crud_db;
+ use crud_db;
+ 
+CREATE TABLE `users` (
+  `Nama_Tim` varchar(100),
+  `Negara_Asal` varchar(10),
+  `Tahun_Berdiri` INT(4)
+  `Nama_Pemain` varchar(100),
+  PRIMARY KEY  (`Nama_Tim`)
+);

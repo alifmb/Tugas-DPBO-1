@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>Add Users</title>
+</head>
+ 
+<body>
+    <a href="index.php">Go to Home</a>
+    <br/><br/>
+ 
+    <form action="add.php" method="post" name="form1">
+        <table width="25%" border="0">
+            <tr> 
+                <td>Nama_Tim</td>
+                <td><input type="text" name="Nama_Tim"></td>
+            </tr>
+            <tr> 
+            <tr> 
+                <td>Negara_Asal</td>
+                <td><input type="text" name="Negara_Asal"></td>
+            </tr>
+            <tr> 
+                <td>Tahun_Berdiri</td>
+                <td><input type="text" name="Tahun_Berdiri"></td>
+            </tr>
+            <tr> 
+                <td>Nama_Pemain</td>
+                <td><input type="text" name="Nama_Pemain"></td>
+            </tr>
+            <tr> 
+                <td></td>
+                <td><input type="submit" name="Submit" value="Add"></td>
+            </tr>
+        </table>
+    </form>
+    
+    <?php
+ 
+    if(isset($_POST['Submit'])) {
+        $Nama_Tim = $_POST['Nama_Tim'];
+        $Negara_Asal = $_POST['Negara_Asal'];
+        $Tahun_Berdiri = $_POST['Tahun_Berdiri'];
+        $Nama_Pemain = $_POST['Nama_Pemain'];
+        
+        include_once("config.php");
+                
+        $result = mysqli_query($mysqli, "INSERT INTO users(Nama_Tim,Negara_Asal,Tahun_Berdiri,Nama_Pemain) VALUES('$Nama_Tim','$Negara_Asal','$Tahun_Berdiri','$Nama_Pemain')");
+        
+        echo "User added successfully. <a href='index.php'>View Users</a>";
+    }
+    ?>
+</body>
+</html>
